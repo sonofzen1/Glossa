@@ -1,0 +1,41 @@
+{
+    "Decks": [
+        {
+          "name": "Nouns",
+          "cards": [
+            {
+                "word": "coche",
+                "definition": "car"
+            },
+            {
+                "word": "manzana",
+                "definition": "apple"
+            },
+            {
+                "word": "hombre",
+                "definition": "man"
+            },
+            {
+                "word": "ciudad",
+                "definition": "city"
+            },
+            {
+                "word": "gato",
+                "definition": "cat"
+            }
+
+            ]
+          
+        },
+
+        {
+          "name": "Verbs", 
+          "cards": [
+            {
+                "word": "correr",
+                "definition": "to run"
+            }
+        ]
+        }
+    ]
+}

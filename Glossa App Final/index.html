@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossa Langauge App</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="TitleName">
+    <h1>Glossa</h1>
+  </div>
+  <div class="container">
+    <div class="add-flashcard-con">
+      <button id="add-flashcard">Add Flashcard</button>
+      <label for="spacing"> _ </label>
+      <button id="add-deck-container">Add Deck</button>
+      <label for="spacing"> _ </label>
+      <button id="add-media-container">Media</button>
+    </div>
+
+    <!-- Display Card of Question And Answers Here -->
+    <div id="card-con">
+      <div class="card-list-container"></div>
+    </div>
+  </div>
+
+  <button id="back-btn">Back</button>
+  <div id="card-display">
+    <button id="study-btn">Study</button>
+    <div class="card-display-container"></div>
+  </div>
+
+  <!-- Input form for users to fill question and answer -->
+  <div class="question-container hide" id="add-question-card">
+    <h2>Add Flashcard</h2>
+    <div class="wrapper">
+      <!-- Error message -->
+      <div class="error-con">
+        <span class="hide" id="error">Input fields cannot be empty!</span>
+      </div>
+      <!-- Close Button -->
+      <i class="fa-solid fa-xmark" id="close-btn"></i>
+    </div>
+
+    <label for="question">Word:</label>
+    <textarea class="input" id="question" placeholder="Type the word here..." rows="2"></textarea>
+    <label for="answer">Definition:</label>
+    <textarea class="input" id="answer" rows="4" placeholder="Type the definition here..."></textarea>
+    <label for="decks">Choose a deck:</label>
+    <!-- <button onclick="buildDeckDropList()">select</button> -->
+    <div id="deckDropList"></div>
+    <button id="save-btn">Save</button>
+  </div>
+
+  <!-- Deck input form -->
+  <div class="question-container hide" id="add-deck-form">
+    <h2>Add Deck</h2>
+    <div class="wrapper">
+      <!-- Error message -->
+      <div class="error-con">
+        <span class="hide" id="error">Input fields cannot be empty!</span>
+      </div>
+      <!-- Close Button -->
+      <i class="fa-solid fa-xmark" id="close-deck-btn"></i>
+    </div>
+
+    <label for="name">Name of Deck:</label>
+    <textarea class="input" id="name" placeholder="Type the name here..." rows="2"></textarea>
+    <button id="save-deck-btn">Save</button>
+  </div>
+
+
+  <div class="study-card-container hide" id="study-card"></div>
+
+
+  <div class="buttonsContainer hide" id="btn-con">
+    <i class="fa-solid fa-check" id="check-mark"></i>
+    <i class="fa-solid fa-xmark" id="dontKnow"></i>
+  </div>
+
+  <div class="text-Media hide" id="media">
+    <h2> Los Tres Cerditos </h2>
+    <h2 class="text hide" id=EngTitle> The Three Little Pigs </h2>
+
+
+    <style>
+      /* toggle in label designing */
+      .toggle {
+        position: relative;
+        background-color: solid gray;
+        display: inline-block;
+        width: 32px;
+        height: 15px;
+        border-radius: 30px;
+        border: 1px solid gray;
+      }
+
+      /* After slide changes */
+      .toggle:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: gray;
+        top: 1px;
+        left: 1px;
+        transition: all 0.5s;
+      }
+
+      /* Checkbox checked effect */
+      .checkbox:checked+.toggle::after {
+        left: 19px;
+      }
+
+      /* Checkbox vanished */
+      .checkbox {
+        display: none;
+      }
+    </style>
+
+
+    <input type="checkbox" id="switch" class="checkbox" />
+    <label for="switch" class="toggle">
+    </label>
+    <div class="text" id="LText">Érase una vez que había una mamá cerda que tenía tres cerditos. Ella los amaba mucho,
+      pero no había suficiente comida para alimentarlos, así que los cerditos tuvieron que ir a buscar su suerte.</div>
+    <div class="text hide" id="EngText">Once upon a time there was a mama pig who had three little pigs. She loved them
+      very much but there was not enough food to feed them, so the little pigs had to go seek their fortune.</div>
+    <template><span id="control"></span></template>
+  </div>
+
+  <!-- Script -->
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
